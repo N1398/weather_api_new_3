@@ -1,0 +1,17 @@
+{
+  "location": {
+    "name": "Hainan",
+    "region": "Hainan",
+    "country": "China",
+    "lat": 18.94,
+    "lon": 109.48,
+    "tz_id": "Asia/Shanghai"
+  },
+  "current": {
+    "temp_c": 21.4,
+    "is_day": 0,
+    "condition": {
+      "text": "Fog"
+    }
+  }
+}

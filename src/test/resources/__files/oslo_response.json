@@ -1,0 +1,17 @@
+{
+  "location": {
+    "name": "Oslo",
+    "region": "Oslo",
+    "country": "Norway",
+    "lat": 59.92,
+    "lon": 10.75,
+    "tz_id": "Europe/Oslo"
+  },
+  "current": {
+    "temp_c": 8.3,
+    "is_day": 0,
+    "condition": {
+      "text": "Light rain"
+    }
+  }
+}

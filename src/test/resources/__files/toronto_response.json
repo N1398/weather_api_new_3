@@ -1,0 +1,41 @@
+{
+  "location": {
+    "name": "Toronto",
+    "region": "Ontario",
+    "country": "Canada",
+    "lat": 43.67,
+    "lon": -79.42,
+    "tz_id": "America/Toronto",
+    "localtime_epoch": 1634567890,
+    "localtime": "2021-10-19 12:34"
+  },
+  "current": {
+    "last_updated_epoch": 1634567890,
+    "last_updated": "2021-10-19 12:34",
+    "temp_c": 18.5,
+    "temp_f": 65.3,
+    "is_day": 1,
+    "condition": {
+      "text": "Sunny",
+      "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+      "code": 1000
+    },
+    "wind_mph": 8.9,
+    "wind_kph": 14.4,
+    "wind_degree": 300,
+    "wind_dir": "NW",
+    "pressure_mb": 1015.0,
+    "pressure_in": 29.97,
+    "precip_mm": 0.0,
+    "precip_in": 0.0,
+    "humidity": 55,
+    "cloud": 0,
+    "feelslike_c": 18.0,
+    "feelslike_f": 64.4,
+    "vis_km": 10.0,
+    "vis_miles": 6.0,
+    "uv": 4.0,
+    "gust_mph": 11.2,
+    "gust_kph": 18.0
+  }
+}

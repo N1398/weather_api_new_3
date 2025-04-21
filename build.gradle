@@ -1,0 +1,83 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+repositories {
+    mavenCentral()
+    // Добавляем JCenter репозиторий для JBehave (хотя он deprecated, но пока содержит нужные артефакты)
+    jcenter()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api
+    implementation("org.apache.logging.log4j:log4j-api:2.23.1")
+//    Implementation 'io.qameta.allure:allure-jbehave:2.24.0'
+//    Implementation 'io.qameta.allure:allure-rest-assured:2.24.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.2'
+    // RestAssured для работы с API
+    implementation 'io.rest-assured:rest-assured:5.3.2'
+
+    // WireMock для создания заглушек
+    implementation 'com.github.tomakehurst:wiremock:3.0.1'
+
+    // JBehave для BDD тестирования (только core)
+    testImplementation 'org.jbehave:jbehave-core:4.8.3'
+
+    // Allure для отчетов
+    testImplementation 'io.qameta.allure:allure-jbehave:2.24.0'
+    testImplementation 'io.qameta.allure:allure-rest-assured:2.24.0'
+
+    // Логгирование
+    testImplementation 'org.apache.logging.log4j:log4j-core:2.23.1'
+    testImplementation 'org.apache.logging.log4j:log4j-api:2.23.1'
+
+    // Вспомогательные библиотеки
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.9.3' // Для совместимости с JBehave
+    testImplementation 'org.slf4j:slf4j-simple:2.0.7'
+}
+tasks.withType(Test) {
+    jvmArgs = [
+            "--add-opens=java.base/java.lang=ALL-UNNAMED",
+            "--add-opens=java.base/java.util=ALL-UNNAMED",
+            "-Dfile.encoding=UTF-8",
+            "-Dconsole.encoding=UTF-8"
+    ]
+}
+test {
+    useJUnitPlatform()
+    systemProperties System.getProperties()
+    systemProperty 'file.encoding', 'UTF-8'
+    systemProperty 'console.encoding', 'UTF-8'
+}
+sourceSets {
+    test {
+        resources {
+            srcDirs = ['src/test/resources']
+            includes = ['**/*.story', '**/*.json']
+        }
+    }
+}
+
+allure {
+    version = '2.24.0'
+    autoconfigure = true
+    aspectjweaver = true
+
+    useJUnit5 {
+        version = '2.24.0'
+    }
+}
+
+//java {
+//    toolchain {
+//        languageVersion = JavaLanguageVersion.of(21)
+//    }
+//}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-Xlint:deprecation"
+}

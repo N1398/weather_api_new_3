@@ -1,0 +1,20 @@
+{
+  "locations": [
+    {
+      "q": "Hainan",
+      "custom_id": "any-internal-id"
+    },
+    {
+      "q": "Oslo",
+      "custom_id": "any-internal-id"
+    },
+    {
+      "q": "Hanoi",
+      "custom_id": "any-internal-id"
+    },
+    {
+      "q": "Toronto",
+      "custom_id": "any-internal-id"
+    }
+  ]
+}
