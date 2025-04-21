@@ -34,7 +34,6 @@ public class BulkWeatherResponse {
         private CurrentWeatherResponse.Location location;
         private CurrentWeatherResponse.Current current;
 
-        // геттеры и сеттеры
 
         public String getCustom_id() { return custom_id; }
         public void setCustom_id(String custom_id) { this.custom_id = custom_id; }

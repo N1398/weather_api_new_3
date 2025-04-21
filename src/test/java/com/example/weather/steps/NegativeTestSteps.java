@@ -44,29 +44,6 @@ public class NegativeTestSteps {
         }
     }
 
-//
-//    @Given("a weather API client with base URL '$baseUrl' and API key '$apiKey'")
-//    public void setupApiClient(String baseUrl, String apiKey) {
-//        this.apiKey = apiKey;
-//        String resolvedUrl = baseUrl.replace("${wiremock.port}", String.valueOf(WireMockConfig.getPort()));
-//        try {
-//            apiClient = new WeatherApiClient(resolvedUrl, apiKey);
-//        } catch (Exception e) {
-//            throw new RuntimeException("API client initialization failed", e);
-//        }
-//    }
-//    @Given("a weather API client with base URL '$baseUrl' and API key '$apiKey'")
-//    public void setupApiClientWithoutQ(String baseUrl, String apiKey) {
-//        this.apiKey = apiKey;
-//        String resolvedUrl = baseUrl.replace("${wiremock.port}", String.valueOf(WireMockConfig.getPort()));
-//        try {
-//            apiClient = new WeatherApiClient(resolvedUrl, apiKey);
-//        } catch (Exception e) {
-//            throw new RuntimeException("API client initialization failed", e);
-//        }
-//    }
-
-
     @Given("WireMock is configured to return error with status $statusCode, code $errorCode and message $errorMessage")
     public void setupErrorStub(int statusCode, int errorCode, String errorMessage) {
         if (apiKey == null) {

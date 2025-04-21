@@ -15,7 +15,6 @@ public class ErrorResponse {
         private int code;
         private String message;
 
-        // Getters and Setters
         public int getCode() {
             return code;
         }

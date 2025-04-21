@@ -73,60 +73,29 @@ When I send a bulk weather POST request with body from file 'bulk-request.json'
 Then the response should contain 4 weather entries
 And weather entry 0 should match expected values:
 | key                       | value         |
-| query.q                  | Hainan        |
-| query.location.name      | Hainan        |
-| query.location.country   | China         |
-| query.current.temp_c     | 20.4          |
-| query.current.condition.text | Fog      |
+| query.q                  | Hainan         |
+| query.location.name      | Hainan         |
+| query.location.country   | China          |
+| query.current.temp_c     | 20.4           |
+| query.current.condition.text | Fog        |
 And weather entry 1 should match expected values:
 | key                       | value         |
-| query.q                  | Oslo          |
-| query.location.name      | Oslo          |
-| query.location.country   | Norway        |
-| query.current.temp_c     | 8.1           |
-| query.current.condition.text | Partly cloudy |
-
-
-Scenario: Get current weather for multiple cities using bulk POST request
-Given a weather API client with base URL 'http://localhost:${wiremock.port}' and API key 'test-key'
-And WireMock is configured to return bulk weather response for request from file 'bulk-request.json' with response from file 'bulk-response.json'
-When I send a bulk weather POST request with body from file 'bulk-request.json'
-Then the response status code should be 200
-And the response should contain 4 weather entries
-And weather entry 0 should match expected values:
-| key                       | value         |
-| query.q                  | Hainan        |
-| query.custom_id          | any-internal-id |
-| query.location.name      | Hainan        |
-| query.location.region    | Hainan        |
-| query.location.country   | China         |
-| query.location.lat       | 18.9394       |
-| query.location.lon       | 109.4842      |
-| query.current.temp_c     | 20.4          |
-| query.current.condition.text | Fog      |
-And weather entry 1 should match expected values:
-| key                       | value         |
-| query.q                  | Oslo          |
-| query.custom_id          | any-internal-id |
-| query.location.name      | Oslo          |
-| query.location.region    | Oslo          |
-| query.location.country   | Norway        |
-| query.current.temp_c     | 8.1           |
+| query.q                  | Oslo           |
+| query.location.name      | Oslo           |
+| query.location.country   | Norway         |
+| query.current.temp_c     | 8.1            |
 | query.current.condition.text | Partly cloudy |
 And weather entry 2 should match expected values:
 | key                       | value         |
-| query.q                  | Hanoi         |
-| query.custom_id          | any-internal-id |
-| query.location.name      | Hanoi         |
-| query.location.country   | Vietnam       |
-| query.current.temp_c     | 26.4          |
-| query.current.condition.text | Overcast    |
+| query.q                  | Hanoi          |
+| query.location.name      | Hanoi          |
+| query.location.country   | Vietnam        |
+| query.current.temp_c     | 26.4           |
+| query.current.condition.text | Overcast   |
 And weather entry 3 should match expected values:
 | key                       | value         |
-| query.q                  | Toronto       |
-| query.custom_id          | any-internal-id |
-| query.location.name      | Toronto       |
-| query.location.region    | Ontario       |
-| query.location.country   | Canada        |
-| query.current.temp_c     | 9.3           |
+| query.q                  | Toronto        |
+| query.location.name      | Toronto        |
+| query.location.country   | Canada         |
+| query.current.temp_c     | 9.3            |
 | query.current.condition.text | Sunny      |

@@ -104,6 +104,7 @@ public class PositiveTestSteps {
         String body = WeatherApiStub.readFile("__files/" + requestFile);
         response = given()
                 .spec(apiClient.getSpec())
+                .queryParam("q", "bulk")
                 .body(body)
                 .post(WeatherApiEndpoints.CURRENT_WEATHER);
         bulkResponse = response.as(BulkWeatherResponse.class);
